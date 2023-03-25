@@ -7,6 +7,16 @@
     <groupId>org.tasks</groupId>
     <artifactId>lectures</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>l2</module>
+        <module>l3</module>
+        <module>l4</module>
+        <module>l5</module>
+        <module>l6</module>
+        <module>l7</module>
+        <module>l8</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
