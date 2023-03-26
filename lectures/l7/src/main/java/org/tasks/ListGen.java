@@ -1,15 +1,14 @@
 package org.tasks;
 
-public class LinkedList {
-    private Node root;
+public class ListGen {
+    private NodeGen root;
 
-    public LinkedList(){
-        root = null;
+    public ListGen(){
     }
 
-    public void add(Object item) {
-        Node newNode = new Node(item);
-        Node lastNode = findLast();
+    public void add(pair item) {
+        NodeGen newNode = new NodeGen(item);
+        NodeGen lastNode = findLast();
 
         if (lastNode == null) {
             root = newNode;
@@ -18,9 +17,9 @@ public class LinkedList {
         }
     }
 
-    private Node findLast() {
-        Node last = root;
-        if (last != null) {
+    private NodeGen findLast() {
+        NodeGen last = root;
+        if (last != null){
             while (last.GetNext() != null) {
                 last = last.GetNext();
             }
@@ -28,24 +27,20 @@ public class LinkedList {
         return last;
     }
 
-    public Object get(int index) {
-        Node n = this.root;
+    public pair get(int index) {
+        NodeGen n = this.root;
         int i = 1;
-        while (n != null & i < index) {
+        while (n != null  & i < index){
             n = n.GetNext();
             i++;
         }
-        if (n == null) {
-            return n;
-        } else {
-            return n.getValue();
-        }
+        return n.getValue();
     }
 
     public int size() {
         int s = 0;
         if (root != null) {
-            Node n = root;
+            NodeGen n = root;
             s++;
             while (n.GetNext() != null) {
                 n = n.GetNext();
@@ -54,4 +49,5 @@ public class LinkedList {
         }
         return s;
     }
+
 }
