@@ -6,6 +6,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.tasks.LinkedList;
+import org.tasks.ListGen;
+import org.tasks.pair;
 
 /**
  * Unit test for simple App.
@@ -62,6 +64,48 @@ public class AppTest
         assertTrue( t );
     };
 
+    @Test
+    public void TestOneListGen() {
+        ListGen llg =new ListGen();
+        pair<String, Double> w = new pair<>("Andy", 67.32);
+        llg.add(w);
+        boolean t = true;
+        if (llg.size() != 1){
+            t = false;
+        }
+        assertTrue( t );
+    };
+
+    @Test
+    public void TestTwoListGen() {
+        ListGen llg =new ListGen();
+        pair<String, Double> w = new pair<>("Andy", 67.32);
+        llg.add(w);
+        w = new pair<>("Ned", 45.82);
+        llg.add(w);
+        boolean t = true;
+        if (llg.get(2) != w){
+            t = false;
+        }
+        assertTrue( t );
+    };
+
+
+    @Test
+    public void TestThreeListGen() {
+        ListGen llg =new ListGen();
+        pair<String, Double> w = new pair<>("Andy", 67.32);
+        w = new pair<>("Ned", 45.82);
+        int n = 20;
+        for (int i = 1; i <= n; i++){
+            llg.add(w);
+        }
+        boolean t = true;
+        if (llg.size() != n) {
+            t = false;
+        }
+        assertTrue( t );
+    };
 
 
 }

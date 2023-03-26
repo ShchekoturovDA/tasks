@@ -4,6 +4,7 @@ public class ListGen {
     private NodeGen root;
 
     public ListGen(){
+        root = null;
     }
 
     public void add(pair item) {
