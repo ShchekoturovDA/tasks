@@ -16,6 +16,8 @@
         <module>l6</module>
         <module>l7</module>
         <module>l8</module>
+        <module>l9</module>
+        <module>l10</module>
     </modules>
 
     <properties>
