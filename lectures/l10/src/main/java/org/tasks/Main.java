@@ -20,7 +20,7 @@ public class Main {
             if (ComMap.containsKey(Curcom)) {
                 ComMap.get(Curcom).Execute();
             } else {
-                System.out.println("Комманда не известна");
+                System.out.println("Команда '" + Curcom + "' не известна");
             }
             test = Curcom;
         }
