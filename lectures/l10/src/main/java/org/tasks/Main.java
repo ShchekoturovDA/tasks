@@ -1,7 +1,5 @@
 package org.tasks;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,13 +10,22 @@ public class Main {
         ComMap.put("time", t);
         Exit e = new Exit();
         ComMap.put("exit", e);
+        String CurPath = "C:/";
+        CurP c = new CurP();
+        ComMap.put("pwd", c);
+        String ExP = "";
+        Cats AllP = new Cats();
+        List<String> P1 = new ArrayList<String>();
+        P1.add("")
+        AllP.Papk.put("C:", );
+
         String test = new String();
         while (ComMap.get(test) != e) {
-            System.out.print('>');
+            System.out.print(ExP + '>');
             Scanner scan = new Scanner(System.in);
             String Curcom = scan.nextLine();
             if (ComMap.containsKey(Curcom)) {
-                ComMap.get(Curcom).Execute();
+                ComMap.get(Curcom).Execute(CurPath);
             } else {
                 System.out.println("Команда '" + Curcom + "' не известна");
             }
