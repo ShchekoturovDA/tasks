@@ -9,8 +9,8 @@ public class Main {
         int b = sc.nextInt();
         Multipl m = new Multipl();
         try {
-            m.Mult(a, b);
-        } catch (ErrMult Em) {
+            System.out.println(m.mult(a, b));
+        } catch (OddException Em) {
             System.out.println(Em.getMessage());
         } finally {
             System.out.println("Завершение работы");

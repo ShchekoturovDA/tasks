@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.tasks.ErrMult;
+import org.tasks.OddException;
 import org.tasks.Multipl;
 
 /**
@@ -13,23 +13,16 @@ import org.tasks.Multipl;
  */
 public class AppTest 
 {
-   @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
-
 
     @Test
     public void TestExc(){
        Multipl m = new Multipl();
        String canon = "Множитель нечётный";
        try{
-           m.Mult(5, 2);
-       } catch (ErrMult thrown){
+           int multiply = m.mult(5, 2);
+       } catch (OddException thrown){
            assertEquals(canon, thrown.getMessage());
        }
     };
-
 
 }
