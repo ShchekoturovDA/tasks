@@ -6,6 +6,6 @@ import java.io.IOException;
 public interface FileWork {
 
     public void MakeFile(String name) throws IOException;
-    public char[] ReadFile(String name, char[] where) throws IOException;
+    public String ReadFile(String name, String content) throws IOException;
     public void WriteFile(String name, String Words) throws IOException;
 }

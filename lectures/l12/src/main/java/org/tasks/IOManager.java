@@ -1,6 +1,7 @@
 package org.tasks;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class IOManager implements FileWork {
     IOManager(){}
@@ -12,11 +13,13 @@ public class IOManager implements FileWork {
     }
 
     @Override
-    public char[] ReadFile(String name, char[] where) throws IOException {
-        FileReader ReadIt = new FileReader(name);
-        ReadIt.read(where);
-        ReadIt.close();
-        return where;
+    public String ReadFile(String name, String content) throws IOException {
+        File file = new File(name);
+        Scanner scan = new Scanner(file);
+        while (scan.hasNextLine()){
+            content += scan.nextLine();
+        }
+        return content;
     }
 
     @Override

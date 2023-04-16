@@ -15,8 +15,9 @@ public class Main {
         scan.close();
         io.MakeFile(file1);
         io.WriteFile(file1, Input);
+        String Output = "";
         Output = io.ReadFile(file1, Output);
-        System.out.println(SOut);
+        System.out.println(Output);
 
     }
 }
