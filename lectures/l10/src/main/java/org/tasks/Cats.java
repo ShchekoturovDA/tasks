@@ -1,16 +1,25 @@
 package org.tasks;
 
-import java.util.HashMap;
-import java.util.List;
+import java.io.File;
 
 public class Cats implements Command {
-    HashMap<String, List<String>> Papk;
-
     public Cats() {}
 
     @Override
-    public void Execute(String CurPath) {
-        String[] PbP = CurPath.split("/");
-        System.out.println(Papk.get(PbP[PbP.length - 1]));
+    public String Execute(String CurPath, String[] inp) {
+        if (inp.length != 1) {
+            System.out.println("Лишние символы");
+        } else {
+            File ficF = new File(CurPath);
+            File[] allP = ficF.listFiles();
+            for (int i = 0; i < allP.length; i++) {
+                if (allP[i].isDirectory()){
+                    String[] PtP = allP[i].toString().split("\\\\");
+                    System.out.println(PtP[PtP.length - 1]);
+                }
+            }
+        }
+
+        return CurPath;
     }
 }

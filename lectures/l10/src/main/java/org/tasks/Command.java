@@ -1,5 +1,5 @@
 package org.tasks;
 
 public interface Command {
-    public void Execute(String CurPath);
+    public String Execute(String CurPath, String[] inp);
 }
