@@ -1,6 +1,8 @@
 package org.tasks;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Transport implements Command {
 
@@ -19,15 +21,19 @@ public class Transport implements Command {
             for (int i = 0; i < allP.length; i++) {
                 if (allP[i].isDirectory()){
                     String[] PtP = allP[i].toString().split("\\\\");
-                    System.out.println(PtP[PtP.length - 1]);
-                    if (dir == PtP[PtP.length - 1]) {
+                    String nP = "" + PtP;
+                    String our = CurPath + dir;
+                    Path oF = Paths.get(our);
+                    Path nF = Paths.get(allP[i].toString());
+                    int c = oF.compareTo(nF);
+                    if (c == 0) {
                         trAccepted = true;
                         System.out.println("Norm");
                     }
                 }
             }
             if (trAccepted) {
-                CurPath = CurPath + inp[1] + "\\\\";
+                CurPath = CurPath + inp[1] + "\\";
                 System.out.println("Новый путь: " + CurPath);
             } else {
                 System.out.println("Нет такой директории");

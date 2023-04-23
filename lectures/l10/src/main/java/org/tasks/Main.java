@@ -21,8 +21,6 @@ public class Main {
         String ExP = "";
         Cats AllP = new Cats();
         List<String> P1 = new ArrayList<String>();
-//        P1.add("")
-//        AllP.Papk.put("C:", );
 
         String test = new String();
         while (ComMap.get(test) != e) {
