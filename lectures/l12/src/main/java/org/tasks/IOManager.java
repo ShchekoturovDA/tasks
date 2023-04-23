@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.Scanner;
 
 public class IOManager implements FileWork {
-    IOManager(){}
 
     @Override
     public void MakeFile(String name) throws IOException {
