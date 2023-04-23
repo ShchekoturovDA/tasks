@@ -1,9 +1,8 @@
 package org.tasks;
-import java.io.IOException;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Map<String, Command> ComMap = new HashMap<String, Command>();
         CurDate d = new CurDate();
         ComMap.put("date", d);
@@ -19,10 +18,8 @@ public class Main {
         Transport cd = new Transport();
         ComMap.put("cd", cd);
         String ExP = "";
-        Cats AllP = new Cats();
-        List<String> P1 = new ArrayList<String>();
 
-        String test = new String();
+        String test = "";
         while (ComMap.get(test) != e) {
             System.out.print(ExP + '>');
             Scanner scan = new Scanner(System.in);
