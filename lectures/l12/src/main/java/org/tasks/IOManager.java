@@ -13,12 +13,14 @@ public class IOManager implements FileWork {
     }
 
     @Override
-    public String ReadFile(String name, String content) throws IOException {
+    public String ReadFile(String name) throws IOException {
         File file = new File(name);
-        Scanner scan = new Scanner(file);
-        while (scan.hasNextLine()){
-            content += scan.nextLine();
+        FileReader ReadTo = new FileReader(name);
+        String content = "";
+        while (ReadTo.ready()) {
+            content += (char)ReadTo.read();
         }
+        ReadTo.close();
         return content;
     }
 
