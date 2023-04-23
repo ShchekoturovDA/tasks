@@ -7,6 +7,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.ByteChannel;
 import java.nio.channels.FileChannel;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -15,6 +16,7 @@ public class NIOManager implements  FileWork {
     @Override
     public void MakeFile(String name) throws IOException{
         Files.createFile(Path.of(name));
+
     }
 
     @Override
@@ -25,20 +27,22 @@ public class NIOManager implements  FileWork {
         chan.read(buf);
         chan.close();
         buf.flip();
+        byte[] codb = new byte[(int) Files.size(Path.of(name))];
+        int i = 0;
         while (buf.hasRemaining()) {
-            content += (char)buf.get();
+            codb[i] = buf.get();
+            i++;
         }
-        return content;
+        String cod = new String(codb, StandardCharsets.UTF_8);
+        return cod;
     }
 
     @Override
     public void WriteFile(String name, String Words) throws IOException {
-        ByteBuffer buf = ByteBuffer.allocate(Words.length());
-        byte[] Wb = Words.getBytes();
 
-        for(int i = 0; i < Wb.length; i++) {
-            buf.put(Wb[i]);
-        }
+
+        ByteBuffer buf = ByteBuffer.allocate(Words.getBytes(StandardCharsets.UTF_8).length);
+        buf.put(Words.getBytes(StandardCharsets.UTF_8));
         buf.flip();
         RandomAccessFile wf = new RandomAccessFile(name, "rw");
         FileChannel chan = wf.getChannel();

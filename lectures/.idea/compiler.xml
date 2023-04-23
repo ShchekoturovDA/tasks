@@ -15,12 +15,9 @@
         <module name="l7" />
         <module name="l8" />
         <module name="l12" />
+        <module name="l9" />
         <module name="l11" />
-        <module name="l13" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="l9" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
