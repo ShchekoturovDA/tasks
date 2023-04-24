@@ -15,19 +15,12 @@ public class NIOManager implements  FileWork {
 
     @Override
     public String ReadFile(String name) throws IOException{
-        String content = "";
         FileChannel chan = (FileChannel) Files.newByteChannel(Path.of(name));
         ByteBuffer buf = ByteBuffer.allocate((int) Files.size(Path.of(name)));
         chan.read(buf);
         chan.close();
         buf.flip();
-        byte[] codb = new byte[(int) Files.size(Path.of(name))];
-        int i = 0;
-        while (buf.hasRemaining()) {
-            codb[i] = buf.get();
-            i++;
-        }
-        String cod = new String(codb, StandardCharsets.UTF_8);
+        String cod = new String(buf.array(), StandardCharsets.UTF_8);
         return cod;
     }
 
