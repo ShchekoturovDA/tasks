@@ -16,11 +16,9 @@ public class Main {
         NIOManager nio = new NIOManager();
 
         scan.close();
-        io.MakeFile(file1);
         io.WriteFile(file1, Input);
         System.out.println("Результат с IO: ");
         System.out.println(io.ReadFile(file1));
-        nio.MakeFile(file2);
         nio.WriteFile(file2, Input);
         System.out.println("Результат с NIO: ");
         System.out.println(nio.ReadFile(file2));

@@ -14,12 +14,6 @@ import java.nio.file.Path;
 public class NIOManager implements  FileWork {
 
     @Override
-    public void MakeFile(String name) throws IOException{
-        Files.createFile(Path.of(name));
-
-    }
-
-    @Override
     public String ReadFile(String name) throws IOException{
         String content = "";
         FileChannel chan = (FileChannel) Files.newByteChannel(Path.of(name));
