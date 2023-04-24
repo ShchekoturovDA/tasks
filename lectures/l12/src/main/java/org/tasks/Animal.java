@@ -10,14 +10,16 @@ public class Animal {
 
     @Override
     public String toString() {
-        String animal = "Животное вида: " + title;
+        String animal = "Животное с кличкой: " + title;
         if (isAvailable) {
             animal += " продаётся.";
         } else {
             animal += " продано.";
         }
-        animal += '\n';
-        for (photosMap.containsValue(it))
+        animal += "\nФотографии:\n";
+        for (String key : photosMap.keySet()) {
+            animal += '"' + key + '"' + " по ссылке: " + photosMap.get(key) + '\n';
+        }
         return animal;
     }
 }
