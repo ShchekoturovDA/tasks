@@ -20,6 +20,9 @@
         <module>l10</module>
         <module>l11</module>
         <module>l12</module>
+        <module>l13</module>
+        <module>l14</module>
+        <module>l15</module>
     </modules>
 
     <properties>

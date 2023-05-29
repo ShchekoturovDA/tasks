@@ -17,6 +17,9 @@
         <module name="l12" />
         <module name="l9" />
         <module name="l11" />
+        <module name="l14" />
+        <module name="l13" />
+        <module name="l15" />
       </profile>
     </annotationProcessing>
   </component>

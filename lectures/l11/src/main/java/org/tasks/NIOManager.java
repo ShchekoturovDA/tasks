@@ -31,6 +31,7 @@ public class NIOManager implements  FileWork {
         ByteBuffer buf = ByteBuffer.allocate(Words.getBytes(StandardCharsets.UTF_8).length);
         buf.put(Words.getBytes(StandardCharsets.UTF_8));
         buf.flip();
+        Files.deleteIfExists(Path.of(name));
         RandomAccessFile wf = new RandomAccessFile(name, "rw");
         FileChannel chan = wf.getChannel();
         chan.write(buf);
