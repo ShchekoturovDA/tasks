@@ -23,18 +23,10 @@ public class Notification {
         return "Лучшие блины у нас!, 8-495...";
     }
 
-    @Paint(style = arrow, color = BLUE)
+
     public String question() {
         return "2 на 2 равно 4 ?";
     }
 
-    public void out() throws InvocationTargetException, IllegalAccessException {
-        for(Method meth : this.getClass().getMethods()){
-            Paint exec = meth.getAnnotation(Paint.class);
-            if (exec != null) {
-                System.out.println(exec.color() + exec.style() + meth.invoke(this) + exec.style() + exec.color());
-            }
-        }
-    }
-
 }
+
