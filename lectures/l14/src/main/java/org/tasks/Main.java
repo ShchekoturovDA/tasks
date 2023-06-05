@@ -13,14 +13,14 @@ public class Main {
         };
         Expr disc = (a, b, c) -> b * b - 4 * a * c;
 
-        System.out.println(thirt.Thirteen(39));
-        System.out.println(thirt.Thirteen(76));
+        System.out.println(thirt.thirteen(39));
+        System.out.println(thirt.thirteen(76));
 
-        System.out.println(leng.LengthCom("To be or not to be", "Last rites"));
-        System.out.println(leng.LengthCom("Back in black", "Nothing the same"));
+        System.out.println(leng.lengthCom("To be or not to be", "Last rites"));
+        System.out.println(leng.lengthCom("Back in black", "Nothing the same"));
 
-        System.out.println(disc.Discrim(39, 64, 12));
-        System.out.println(disc.Discrim(76, 12, 23));
+        System.out.println(disc.discrim(39, 64, 12));
+        System.out.println(disc.discrim(76, 12, 23));
 
     }
 }

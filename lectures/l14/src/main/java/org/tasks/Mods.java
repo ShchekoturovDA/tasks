@@ -2,5 +2,5 @@ package org.tasks;
 
 @FunctionalInterface
 public interface Mods {
-    public boolean Thirteen(int a);
+    public boolean thirteen(int a);
 }
